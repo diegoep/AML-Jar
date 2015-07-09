@@ -1,15 +1,18 @@
  ______________________________________________________________
 /                                                              \
 |                 AML (AgreementMakerLight)                    |
-|              Demo GUI version & CLI version                  |
-|                Copyright 2013-2014 LASIGE                    |
+|                  Demo GUI / CLI version                      |
+|                Copyright 2013-2015 LASIGE                    |
 |                                                              |
 |  This product includes software developed at LASIGE by the   |
 |  SOMER team (http://somer.fc.ul.pt) in collaboration with    |
 |  the ADVIS Lab (http://www.cs.uic.edu/Advis).                |
 \______________________________________________________________/
 /                                                              \
-|                       DISCLAIMER:                            |
+| Licensed under the Apache License, Version 2.0 (the          |
+| "License"); you may not use this file except in compliance   |
+| with the License. You may obtain a copy of the License at    |
+| http://www.apache.org/licenses/LICENSE-2.0                   |
 |                                                              |
 |  This software is provided on an "AS IS" BASIS, WITHOUT      |
 |  WARRANTIES OR CONDITIONS OF ANY KIND, either express or     |
@@ -20,8 +23,8 @@
 /                                                              \
 |                  SYSTEM REQUIREMENTS:                        |
 |                                                              |
-|  AML requires Java SE Runtime Environment 7. It will not     |
-|  run on older Java versions.                                 |
+|  AML requires Java SE Runtime Environment 7. It likely will  |
+|  not run on older Java versions.                             |
 |                                                              |
 |  Memory usage depends on the size of the ontologies you are  |
 |  working with. We recommend a minimum of 2 GB RAM for small  |
@@ -44,52 +47,76 @@
 /                                                              \
 |                      AML GUI USAGE:                          |
 |                                                              |
-|  You can run the AML GUI by simply by executing the file     |
-|  AgreementMakerLight.jar                                     |
+|  You can run the AML GUI by simply double-clicking the file  |
+|  AgreementMakerLight.jar or through the command line, by     |
+|  typing 'java -jar AgreementMakerLight.jar' without any      |
+|  arguments.                                                  |
 |                                                              |
-|  You can use any ontology as a background knowledge source   |
-|  when using the "AML Matcher" algorithm. Just place the      |
-|  ontology file (in OWL or RDFS) in "./store/knowledge/" and  |
-|  it will be automatically listed by AML.                     |
+|  If you want to use external ontologies as background        |
+|  knowledge sources, just place them in 'store/knowledge/'    |
+|  and they will be automatically listed by AML.               |
 \______________________________________________________________/
 /                                                              \
 |                      AML CLI USAGE:                          |
 |                                                              |
-|  For the AML CLI version, you must run the file              |
-|  AgreementMakerLightCLI.jar with java from the Command Line  |
-|  by using the command:                                       |
+|  For running AML through the command line (without calling   |
+|  the GUI, type:                                              |
 |                                                              |
-|  java -jar AgreementMakerLightCLI.jar OPTIONS                |
+|  java -jar AgreementMakerLight.jar OPTIONS                   |
 |                                                              |
 |  The options are:                                            |
 |                                                              |
-|  -s path_to_source_ontology                                  |
-|  -t path_to_target_ontology                                  |
-|  [-i input_alignment_path]                                   |
-|  [-o ouput_alignment_path]                                   |
-|  [-m] -> match ontologies                                    |
-|  [-r] -> repair alignment (with -m repairs the produced      |
-|          alignment, without it repairs the input alignment)  |
-|  [-b] -> use background knowledge (only with -m)             |
-|  [-u] -> exclude UMLS (only with -m)                         |
+|  -h (--help) -> print the help menu                          |
+|  -s (--source) 'path_to_source_ontology'                     |
+|  -t (--target) 'path_to_target_ontology'                     |
+|  -i (--input)	'path_to_input_alignment'                      |
+|               (mandatory in repair mode, where it will be    |
+|               the alignment to repair; optional in match     |
+|               mode, where it will be used as the reference   |
+|               alignment, to evaluate the match result)       |
+|  -o (--output) 'path_to_ouput_alignment'                     |
+|               (if you want to save the resulting alignment)  |
+|  -a (--auto) -> automatic match mode                         |
+|   OR                                                         |
+|  -m (--manual) -> manual match mode (you can configure the   |
+|                   matcher in the store/config.ini file)      |
+|   OR                                                         |
+|  -r (--repair) -> repair alignment mode                      |
 |                                                              |
 |  Examples:                                                   |
 |                                                              |
-|  1) Use AML to match two ontologies and save output          |
-|  alignment: java -jar AgreementMakerLightCLI.jar             |
+|  1) Use AML to automatically match two ontologies and save   |
+|  output alignment: 'java -jar AgreementMakerLight.jar        |
 |  -s store/anatomy/mouse.owl -t store/anatomy/human.owl       |
-|  -o store/anatomy/alignment.rdf -m [-r -b -u]                |
+|  -o store/anatomy/alignment.rdf -a'                          |
 |                                                              |
-|  2) Use AML to match two ontologies and evaluate the output  |
-|  alignment: java -jar AgreementMakerLightCLI.jar             |
+|  2) Use AML to manually match two ontologies and evaluate    |
+|  the output alignment: 'java -jar AgreementMakerLight.jar    |
 |  -s store/anatomy/mouse.owl -t store/anatomy/human.owl       |
-|  -i store/anatomy/reference.rdf -m [-r -b -u]                |
+|  -i store/anatomy/reference.rdf -m'                          |
+|  Note that you can configure the options manually in the     |
+|  store/config.ini file.                                      |
 |                                                              |
 |  3) Use AML to repair the input alignment between two        |
-|  ontologies: java -jar AgreementMakerLightCLI.jar            |
+|  ontologies: 'java -jar AgreementMakerLight.jar              |
 |  -s store/anatomy/mouse.owl -t store/anatomy/human.owl       |
 |  -i store/anatomy/alignment.rdf -r                           |
-|  -o store/anatomy/repaired_alignment.rdf                     |
+|  -o store/anatomy/repaired_alignment.rdf'                    |
+\______________________________________________________________/
+/                                                              \
+|                 AML TRANSLATION MODULE:                      |
+|                                                              |
+|  AML's translation module is based on the Microsoft (Bing)   |
+|  translator. To use it, you MUST get your own access token   |
+|  from microsoft as detailed here:                            |
+|  https://msdn.microsoft.com/en-us/library/hh454950.aspx      |
+|                                                              |
+|  Once you have an access token, create a file called         |
+|  exactly 'microsoft-translator-id' and place it in the       |
+|  store/ folder. This file should contain your client_id in   |
+|  the first line and your access_token in the second line. It |
+|  should contain no other information.                        |
+|                                                              |
 \______________________________________________________________/
 /                                                              \
 |                       ABOUT AML:                             |
