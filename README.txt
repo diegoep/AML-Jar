@@ -117,6 +117,12 @@
 |  the first line and your access_token in the second line. It |
 |  should contain no other information.                        |
 |                                                              |
+|  Finally, you should create a 'dictionary/' folder within    |
+|  AML's 'store/' folder and ensure that java has write        |
+|  permission in this folder. This folder will be used by AML  |
+|  to store computed translations, so as to avoid overloading  |
+|  Microsoft translator with redundant queries.                |
+|                                                              |
 \______________________________________________________________/
 /                                                              \
 |                       ABOUT AML:                             |
