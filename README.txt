@@ -2,7 +2,7 @@
 /                                                              \
 |                 AML (AgreementMakerLight)                    |
 |                  Demo GUI / CLI version                      |
-|                Copyright 2013-2015 LASIGE                    |
+|                Copyright 2013-2016 LASIGE                    |
 |                                                              |
 |  This product includes software developed at LASIGE by the   |
 |  SOMER team (http://somer.fc.ul.pt) in collaboration with    |
