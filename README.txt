@@ -4,35 +4,59 @@
 |                  Demo GUI / CLI version                      |
 |                Copyright 2013-2016 LASIGE                    |
 |                                                              |
-|  This product includes software developed at LASIGE by the   |
-|  SOMER team (http://somer.fc.ul.pt) in collaboration with    |
-|  the ADVIS Lab (http://www.cs.uic.edu/Advis).                |
-\______________________________________________________________/
-/                                                              \
+| This product includes software developed at LASIGE by the    |
+| SOMER team (http://somer.fc.ul.pt) in collaboration with     |
+| the ADVIS Lab (http://www.cs.uic.edu/Advis) and more         |
+| recently the IGC's bioinformatics unit                       |
+| (http://bioinformatics.igc.gulbenkian.pt/ubi/).              |
+|                                                              |
 | Licensed under the Apache License, Version 2.0 (the          |
 | "License"); you may not use this file except in compliance   |
 | with the License. You may obtain a copy of the License at    |
 | http://www.apache.org/licenses/LICENSE-2.0                   |
 |                                                              |
-|  This software is provided on an "AS IS" BASIS, WITHOUT      |
-|  WARRANTIES OR CONDITIONS OF ANY KIND, either express or     |
-|  implied, including, without limitation, any warranties or   |
-|  conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY,     |
-|  or FITNESS FOR A PARTICULAR PURPOSE.                        |
+| This software is provided on an "AS IS" BASIS, WITHOUT       |
+| WARRANTIES OR CONDITIONS OF ANY KIND, either express or      |
+| implied, including, without limitation, any warranties or    |
+| conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY,      |
+| or FITNESS FOR A PARTICULAR PURPOSE.                         |
+\______________________________________________________________/
+/                                                              \
+|                       ABOUT AML:                             |
+|                                                              |
+|  AML is a lightweight ontology matching system specialized   |
+|  on the biomedical domain but applicable to any ontologies.  |
+|  It can be used to generate alignments automatically, as a   |
+|  platform for reviewing alignments, or as an alignment       |
+|  repair system (both automatically and interactively).       |
+|  AML has achieved top resuls in the last two editions of the |
+|  Ontology Alignment Evaluation Initiative:                   |
+|  - D. Faria, C. Martins, A. Nanavaty, et al. "AML Results    |
+|  for OAEI 2015", ISWC Workshop on Ontology Matching, 2015.   |
+|  - D. Faria, C. Martins, A. Nanavaty, et al.                 |
+|  "AgreementMakerLight Results for OAEI 2014", ISWC Workshop  |
+|  on Ontology Matching, 2014.                                 |
+|                                                              |
+|  If you use AML, please cite the following publication:      |
+|  - D. Faria, C. Pesquita, E. Santos, M. Palmonari, I. Cruz,  |
+|  and F. Couto, The AgreementMakerLight ontology matching     |
+|  system, ODBASE 2013.                                        |
+|                                                              |
+|  The AML GUI uses Gephi, an open source graph visualization  |
+|  and manipulation software. Like AML, Gephi is lightweight   |
+|  and efficient.                                              |
 \______________________________________________________________/
 /                                                              \
 |                  SYSTEM REQUIREMENTS:                        |
 |                                                              |
-|  AML requires Java SE Runtime Environment 7. It likely will  |
-|  not run on older Java versions.                             |
+|  AML requires Java SE Runtime Environment 7+. Its GUI may    |
+|  not function properly on older Java versions.               |
 |                                                              |
 |  Memory usage depends on the size of the ontologies you are  |
 |  working with. We recommend a minimum of 2 GB RAM for small  |
 |  ontologies (<1,000 classes), 4 GB RAM for medium-sized      |
 |  ontologies (<10,000 classes), 8 GB RAM for large ontologies |
 |  (<100,000 classes), and 16 GB RAM for larger ontologies.    |
-|  We also recommend restarting AML when changing from one     |
-|  pair of ontologies to another, to avoid memory build up.    |
 |                                                              |
 |  Please keep in mind that opening large ontologies may take  |
 |  several minutes. Likewise, matching large ontologies may    |
@@ -123,25 +147,4 @@
 |  to store computed translations, so as to avoid overloading  |
 |  Microsoft translator with redundant queries.                |
 |                                                              |
-\______________________________________________________________/
-/                                                              \
-|                       ABOUT AML:                             |
-|                                                              |
-|  AML is a lightweight automated ontology matching system     |
-|  specialized on biomedical ontologies but applicable to      |
-|  other domains. It is described in:                          |
-|  - D. Faria, C. Pesquita, E. Santos, I. Cruz, and F. Couto,  |
-|  AgreementMakerLight Results for OAEI 2013, ISWC Workshop    |
-|  on Ontology Matching, 2013.                                 |
-|  - D. Faria, C. Pesquita, E. Santos, M. Palmonari, I. Cruz,  |
-|  and F. Couto, The AgreementMakerLight ontology matching     |
-|  system, ODBASE 2013.                                        |
-|                                                              |
-|  The AML GUI uses Gephi, an open source graph visualization  |
-|  and manipulation software. Like AML, Gephi is lightweight   |
-|  and efficient. However, it has its faults and limitations,  |
-|  which have an impact on the AML GUI. Namely, the rendered   |
-|  graph will only ajust to the size of the "Mapping View"     |
-|  panel upon being clicked, an inconvenience for which we     |
-|  apologize.                                                  |
 \______________________________________________________________/
