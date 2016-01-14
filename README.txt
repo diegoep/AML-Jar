@@ -6,8 +6,7 @@
 |                                                              |
 | This product includes software developed at LASIGE by the    |
 | SOMER team (http://somer.fc.ul.pt) in collaboration with     |
-| the ADVIS Lab (http://www.cs.uic.edu/Advis) and more         |
-| recently the IGC's bioinformatics unit                       |
+| the ADVIS Lab (http://www.cs.uic.edu/Advis) and the UBI      |
 | (http://bioinformatics.igc.gulbenkian.pt/ubi/).              |
 |                                                              |
 | Licensed under the Apache License, Version 2.0 (the          |
